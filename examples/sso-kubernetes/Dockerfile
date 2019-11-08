@@ -16,9 +16,9 @@ ENV JAVA_HOME=/opt/java/openjdk \
 
 EXPOSE 8080
 # add spring boot application
-VOLUME /tmp
+
 RUN chmod a+rwx -R /app.jar
 WORKDIR /app.jar
-
+VOLUME /tmp
 COPY --from=MAVEN_TOOL_CHAIN /tmp/target/camunda-bpm-identity-keycloak-examples-sso-kubernetes*.jar ./app.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar/camunda-bpm-identity-keycloak-examples-sso-kubernetes.jar"]
