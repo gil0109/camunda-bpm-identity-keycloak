@@ -18,5 +18,4 @@ EXPOSE 8080
 # add spring boot application
 VOLUME /tmp
 COPY --from=MAVEN_TOOL_CHAIN /tmp/target/camunda-bpm-identity-keycloak-examples-sso-kubernetes*.jar ./app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar/camunda-bp
-m-identity-keycloak-examples-sso-kubernetes.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar/camunda-bpm-identity-keycloak-examples-sso-kubernetes.jar"]
