@@ -8,7 +8,7 @@ RUN mvn -s /usr/share/maven/ref/settings-docker.xml package
 
 
 # final custom slim java image (for apk command see jdk-11.0.3_7-alpine-slim)
-FROM redhat-openjdk18-openshift:1.1
+FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
 
 # add spring boot application
 VOLUME /tmp
