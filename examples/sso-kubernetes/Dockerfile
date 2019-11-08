@@ -9,7 +9,7 @@ RUN mvn -s /usr/share/maven/ref/settings-docker.xml package
 # jlinked java 11 (do NOT use alpine-slim here which has important module files deleted)
 FROM adoptopenjdk/openjdk11:jdk-11.0.4_11-alpine AS JLINKED_JAVA
 RUN ["jlink", "--compress=2", \
-     "--exclude-files=**LICENSE_INFO**", \
+     "--exclude-files=**legal**", \
      "--module-path", "/opt/java/openjdk/jmods", \
      "--add-modules", "java.base,java.compiler,java.desktop,java.instrument,java.management,java.prefs,java.rmi,java.scripting,java.security.jgss,java.security.sasl,java.sql.rowset,jdk.httpserver,jdk.jdi,jdk.unsupported", \
      "--output", "/jlinked"]
