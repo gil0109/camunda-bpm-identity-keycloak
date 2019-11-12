@@ -125,6 +125,7 @@
 		<dependency>
 		  <groupId>org.camunda.bpm</groupId>
 		  <artifactId>camunda-engine-rest-root</artifactId>
+		  <version>7.11.0</version>
 		</dependency>
 
 		<!-- Required to run with Java 11 -->
