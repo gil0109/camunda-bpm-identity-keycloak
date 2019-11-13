@@ -20,6 +20,7 @@ import org.springframework.web.context.request.RequestContextListener;
 @ConditionalOnMissingClass("org.springframework.test.context.junit4.SpringJUnit4ClassRunner")
 @Configuration
 @EnableOAuth2Sso
+
 public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/**
@@ -32,7 +33,6 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 	 * 
 	 *           }
 	 */
-
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Bean
 	public FilterRegistrationBean containerBasedAuthenticationFilter() {
