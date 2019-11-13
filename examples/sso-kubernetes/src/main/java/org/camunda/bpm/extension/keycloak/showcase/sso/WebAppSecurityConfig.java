@@ -27,13 +27,8 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.csrf().ignoringAntMatchers("/api/**", "/engine-rest/**").and().antMatcher("/**").authorizeRequests()
-				.antMatchers("/app/**").authenticated().anyRequest().permitAll();
-
-		if (!csrfEnabled) {
-			http.csrf().disable();
-		}
-
+		http.csrf().ignoringAntMatchers("/api/**", "/engine-rest/**", "/camunda/engine-rest/**").and().antMatcher("/**")
+				.authorizeRequests().antMatchers("/app/**").authenticated().anyRequest().permitAll();
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
