@@ -114,6 +114,11 @@
     		<artifactId>camunda-connect-core</artifactId>
     		<version>1.2.2</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.camunda.bpm</groupId>
+			<artifactId>camunda-engine-plugin-connect</artifactId>
+		</dependency>
 
 		<dependency>
    			<groupId>com.sun.mail</groupId>
