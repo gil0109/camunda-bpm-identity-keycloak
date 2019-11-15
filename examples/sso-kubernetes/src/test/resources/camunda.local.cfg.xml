@@ -11,4 +11,6 @@
     </property>
   </bean>
 
+   <bean class="org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin" />
+
 </beans>
