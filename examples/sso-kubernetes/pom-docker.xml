@@ -258,9 +258,6 @@
 						<configuration>
 						</configuration>
 					</plugin>
-					<plugin>
-        				<class>org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin</class>
-      				</plugin>
 				</plugins>
 			</build>
 		</profile>
