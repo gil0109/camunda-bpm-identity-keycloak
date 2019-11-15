@@ -96,6 +96,31 @@
 	        <artifactId>camunda-bpm-identity-keycloak</artifactId>
 		</dependency>
 
+		<!-- Add Email Component -->
+		<dependency>
+  			<groupId>org.camunda.bpm.extension</groupId>
+  			<artifactId>camunda-bpm-mail-core</artifactId>
+  			<version>1.2.0</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.camunda.connect</groupId>
+    		<artifactId>camunda-connect-core</artifactId>
+    		<version>1.2.2</version>
+		</dependency>
+
+		<dependency>
+   			<groupId>com.sun.mail</groupId>
+    		<artifactId>javax.mail</artifactId>
+    		<version>1.6.2</version>
+		</dependency>
+
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-api</artifactId>
+    		<version>1.7.29</version>
+		</dependency>
+
 		<!-- Database -->
 		<dependency>
 		  <groupId>org.springframework.boot</groupId>
