@@ -97,6 +97,12 @@
 		</dependency>
 
 		<!-- Add Email Component -->
+
+		<dependency>
+  			<groupId>org.camunda.connect</groupId>
+  			<artifactId>camunda-connect-connectors-all</artifactId>
+		</dependency>
+
 		<dependency>
   			<groupId>org.camunda.bpm.extension</groupId>
   			<artifactId>camunda-bpm-mail-core</artifactId>
@@ -252,6 +258,9 @@
 						<configuration>
 						</configuration>
 					</plugin>
+					<plugin>
+        				<class>org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+      				</plugin>
 				</plugins>
 			</build>
 		</profile>
