@@ -201,6 +201,10 @@
 
 		<!-- Add your own dependencies here, if in compile scope, they are added 
 			to the jar -->
+    	<dependency>
+    	  <groupId>org.codehaus.groovy</groupId>
+      		<artifactId>groovy-all</artifactId>
+    	</dependency>
 
 	</dependencies>
 
