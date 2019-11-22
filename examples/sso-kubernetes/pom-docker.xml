@@ -147,6 +147,13 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 
+		<dependency>
+    		<groupId>com.microsoft.sqlserver</groupId>
+    		<artifactId>mssql-jdbc</artifactId>
+    		<version>7.4.1.jre11</version>
+    		<scope>test</scope>
+		</dependency>
+
 		<!-- Required to use Spin dataformat support -->
 		<dependency>
 			<groupId>org.camunda.spin</groupId>
@@ -194,6 +201,12 @@
 
 		<!-- Add your own dependencies here, if in compile scope, they are added 
 			to the jar -->
+		<dependency>
+  			<groupId>org.codehaus.groovy</groupId>
+  			<artifactId>groovy-all</artifactId>
+			<version>2.5.8</version>
+			<type>pom</type>
+		</dependency>
 
 	</dependencies>
 
