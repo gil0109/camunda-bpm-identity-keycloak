@@ -52,6 +52,11 @@ security:
 
 logging.level.org.springframework.security: DEBUG
 
+plugin.identity.keycloak.rest:
+  userNameClaim: preferred_username
+  authorityPrefix: "ROLE_"
+  authorityAttributeName: groupIds
+
 plugin.identity.keycloak:
   keycloakIssuerUrl: ${keycloak.url.plugin}/auth/realms/${KEYCLOAK_URL_REALM}
   keycloakAdminUrl: ${keycloak.url.plugin}/auth/admin/realms/${KEYCLOAK_URL_REALM}
