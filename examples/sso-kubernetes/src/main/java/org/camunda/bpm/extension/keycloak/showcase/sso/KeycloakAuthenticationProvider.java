@@ -42,11 +42,10 @@ public class KeycloakAuthenticationProvider extends ContainerBasedAuthentication
         // String userId = ((HashMap<String, String>)
         // userAuthentication.getDetails()).get("email"); // useEmailAsCamundaUserId =
         // true
-        String userId = ((HashMap<String, String>) userAuthentication.getDetails()).get("email");
         // String userId = ((HashMap<String, String>)
-        // userAuthentication.getDetails()).get("preferred_username");
-        // useUsernameAsCamundaUserId
-        // = true
+        // userAuthentication.getDetails()).get("email");
+        String userId = ((HashMap<String, String>) userAuthentication.getDetails()).get("preferred_username");
+        // useUsernameAsCamundaUserId = true
         if (StringUtils.isEmpty(userId)) {
             return AuthenticationResult.unsuccessful();
         }
