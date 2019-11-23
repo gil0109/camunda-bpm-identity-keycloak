@@ -6,7 +6,7 @@ spring.datasource:
 
 spring:
   jersey:
-    application-path: /camunda/engine-rest
+    application-path: /engine-rest
   security:
     oauth2:
       resourceserver:
