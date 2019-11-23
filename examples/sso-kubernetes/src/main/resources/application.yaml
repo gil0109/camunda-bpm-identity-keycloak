@@ -6,7 +6,13 @@ spring.datasource:
 
 spring:
   jersey:
-    application-path: engine-rest
+    application-path: /engine-rest
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.url.client}/auth/realms/${KEYCLOAK_URL_REALM}
+
 # Redis Session Cache not yet in use
 #  session:
 #    store-type: ${SESSION_STORE_TYPE:none}
@@ -46,13 +52,18 @@ security:
 
 logging.level.org.springframework.security: DEBUG
 
+plugin.identity.keycloak.rest:
+  userNameClaim: preferred_username
+  authorityPrefix: "ROLE_"
+  authorityAttributeName: groupIds
+
 plugin.identity.keycloak:
   keycloakIssuerUrl: ${keycloak.url.plugin}/auth/realms/${KEYCLOAK_URL_REALM}
   keycloakAdminUrl: ${keycloak.url.plugin}/auth/admin/realms/${KEYCLOAK_URL_REALM}
   clientId: ${KEYCLOAK_CLIENTID}
   clientSecret: ${KEYCLOAK_CLIENTSECRET}
-  useEmailAsCamundaUserId: true
-  useUsernameAsCamundaUserId: false
+  useEmailAsCamundaUserId: false
+  useUsernameAsCamundaUserId: true
   useGroupPathAsCamundaGroupId: true
   administratorGroupName: camunda-admin
   disableSSLCertificateValidation: true
