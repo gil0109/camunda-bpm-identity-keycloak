@@ -27,10 +27,25 @@ import org.springframework.web.context.request.RequestContextListener;
 @Order(SecurityProperties.BASIC_AUTH_ORDER - 15)
 public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	/** */
+		@Inject
+		private KeycloakLogoutHandler keycloakLogoutHandler;
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().ignoringAntMatchers("/api/**", "/engine-rest/**", "/camunda/engine-rest/**").and().antMatcher("/**").authorizeRequests().antMatchers("/app/**").authenticated().anyRequest().permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/app/**/logout")).logoutSuccessHandler(keycloakLogoutHandler);
+		http
+		.csrf().ignoringAntMatchers("/api/**", "/engine-rest/**", "/camunda/engine-rest/**")
+		.and()
+		.antMatcher("/**")
+		.authorizeRequests()
+			.antMatchers("/app/**")
+			.authenticated()
+		.anyRequest()
+			.permitAll()
+		.and()
+			.logout()
+			.logoutRequestMatcher(new AntPathRequestMatcher("/app/**/logout"))
+			.logoutSuccessHandler(keycloakLogoutHandler)
+		;
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
