@@ -2,6 +2,8 @@ package org.camunda.bpm.extension.keycloak.showcase.sso;
 
 import java.util.Collections;
 
+import javax.inject.Inject;
+
 import org.camunda.bpm.webapp.impl.security.auth.ContainerBasedAuthenticationFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
@@ -12,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.context.request.RequestContextListener;
 
 /**
@@ -29,7 +32,11 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.csrf().ignoringAntMatchers("/api/**", "/engine-rest/**", "/camunda/engine-rest/**").and().antMatcher("/**")
-				.authorizeRequests().antMatchers("/app/**").authenticated().anyRequest().permitAll();
+				.authorizeRequests().antMatchers("/app/**").authenticated().anyRequest().permitAll().and()
+          .logout()
+          .logoutRequestMatcher(new AntPathRequestMatcher("/app/**/logout"))
+          .logoutSuccessHandler(keycloakLogoutHandler)
+        ;
 
 	}
 
