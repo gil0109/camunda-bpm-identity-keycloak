@@ -30,14 +30,7 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 	/** */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
-		http.csrf().ignoringAntMatchers("/api/**", "/engine-rest/**", "/camunda/engine-rest/**").and().antMatcher("/**")
-				.authorizeRequests().antMatchers("/app/**").authenticated().anyRequest().permitAll().and()
-          .logout()
-          .logoutRequestMatcher(new AntPathRequestMatcher("/app/**/logout"))
-          .logoutSuccessHandler(keycloakLogoutHandler)
-        ;
-
+		http.csrf().ignoringAntMatchers("/api/**", "/engine-rest/**", "/camunda/engine-rest/**").and().antMatcher("/**").authorizeRequests().antMatchers("/app/**").authenticated().anyRequest().permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/app/**/logout")).logoutSuccessHandler(keycloakLogoutHandler);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
