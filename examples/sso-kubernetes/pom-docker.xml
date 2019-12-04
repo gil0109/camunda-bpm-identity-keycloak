@@ -24,8 +24,8 @@
 		<version.camunda>7.12.0</version.camunda>
 		<!-- <version.camunda>7.11.3-ee</version.camunda> -->
 		<version.camundaSpringBoot>3.4.0</version.camundaSpringBoot>
-		<version.springBoot>2.1.9.RELEASE</version.springBoot>
-		<version.springSecurityOauth2>2.1.9.RELEASE</version.springSecurityOauth2>
+		<version.springBoot>2.2.1.RELEASE</version.springBoot>
+		<version.springSecurityOauth2>2.2.1.RELEASE</version.springSecurityOauth2>
 	</properties>
 
     <dependencyManagement>
